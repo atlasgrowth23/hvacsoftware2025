@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255; /* #FFFFFF - Pure white */
+  --foreground: 15 23 42; /* #0F172A - slate-900 */
+  --muted: 248 250 252; /* #F8FAFC - slate-50 */
+  --muted-foreground: 100 116 139; /* #64748B - slate-500 */
+  --popover: 255 255 255; /* #FFFFFF */
+  --popover-foreground: 15 23 42; /* #0F172A - slate-900 */
+  --card: 255 255 255; /* #FFFFFF */
+  --card-foreground: 15 23 42; /* #0F172A - slate-900 */
+  --border: 226 232 240; /* #E2E8F0 - slate-200 */
+  --input: 255 255 255; /* #FFFFFF */
+  --primary: 37 99 235; /* #2563EB - blue-600 */
+  --primary-foreground: 255 255 255; /* #FFFFFF */
+  --secondary: 248 250 252; /* #F8FAFC - slate-50 */
+  --secondary-foreground: 15 23 42; /* #0F172A - slate-900 */
+  --accent: 16 185 129; /* #10B981 - emerald-500 */
+  --accent-foreground: 255 255 255; /* #FFFFFF */
+  --destructive: 239 68 68; /* #EF4444 - red-500 */
+  --destructive-foreground: 255 255 255; /* #FFFFFF */
+  --ring: 37 99 235; /* #2563EB - blue-600 */
+  --radius: 0.5rem;
+  --chart-1: 37 99 235; /* #2563EB - blue-600 */
+  --chart-2: 16 185 129; /* #10B981 - emerald-500 */
+  --chart-3: 71 85 105; /* #475569 - slate-600 */
+  --chart-4: 107 114 128; /* #6B7280 - gray-500 */
+  --chart-5: 156 163 175; /* #9CA3AF - gray-400 */
+}
+
+.dark {
+  --background: 15 23 42; /* #0F172A - slate-900 */
+  --foreground: 248 250 252; /* #F8FAFC - slate-50 */
+  --muted: 30 41 59; /* #1E293B - slate-800 */
+  --muted-foreground: 148 163 184; /* #94A3B8 - slate-400 */
+  --popover: 15 23 42; /* #0F172A - slate-900 */
+  --popover-foreground: 248 250 252; /* #F8FAFC - slate-50 */
+  --card: 30 41 59; /* #1E293B - slate-800 */
+  --card-foreground: 248 250 252; /* #F8FAFC - slate-50 */
+  --border: 51 65 85; /* #334155 - slate-700 */
+  --input: 30 41 59; /* #1E293B - slate-800 */
+  --primary: 59 130 246; /* #3B82F6 - blue-500 */
+  --primary-foreground: 255 255 255; /* #FFFFFF */
+  --secondary: 30 41 59; /* #1E293B - slate-800 */
+  --secondary-foreground: 248 250 252; /* #F8FAFC - slate-50 */
+  --accent: 34 197 94; /* #22C55E - green-500 */
+  --accent-foreground: 15 23 42; /* #0F172A - slate-900 */
+  --destructive: 239 68 68; /* #EF4444 - red-500 */
+  --destructive-foreground: 248 250 252; /* #F8FAFC - slate-50 */
+  --ring: 59 130 246; /* #3B82F6 - blue-500 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: white;
+    color: rgb(15 23 42);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+
+  .dark body {
+    background-color: rgb(15 23 42);
+    color: rgb(248 250 252);
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-6 shadow-sm;
+  }
+  
+  .nav-link {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors;
+  }
+  
+  .nav-link-active {
+    @apply text-white bg-blue-600 dark:bg-blue-500;
+  }
+  
+  .nav-link-inactive {
+    @apply text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800;
+  }
+
+  .status-badge-active {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800;
+  }
+
+  .status-badge-completed {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800;
+  }
+
+  .status-badge-scheduled {
+    @apply bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800;
+  }
+
+  .status-badge-in-progress {
+    @apply bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-600;
+  }
+
+  .status-badge-urgent {
+    @apply bg-red-50 text-red-700 border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800;
+  }
+
+  .status-badge-high {
+    @apply bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800;
+  }
+
+  .status-badge-medium {
+    @apply bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-600;
+  }
+
+  .status-badge-low {
+    @apply bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-900/20 dark:text-slate-300 dark:border-slate-800;
+  }
+}
